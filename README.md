@@ -22,7 +22,7 @@ Get the IP address of the server, replace `#{your docker process id}#` with the 
 
 Navigate to `/db` and run the schema migrations using flyway replacing values where appropriate:
 
-`flyway -url=jdbc:mariadb://#{your docker db ip}#:3306 -user=root -password=#{your db password}# -schemas=openra-rc -locations=filesystem:./migration migrat`
+`flyway -url=jdbc:mariadb://#{your docker db ip}#:3306 -user=root -password=#{your db password}# -schemas=openra-rc -locations=filesystem:./migration migrate`
 
 Note: you may need to manually create the openra-rc database schema
 
