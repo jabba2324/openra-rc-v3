@@ -1,16 +1,16 @@
 # Reademe
 
 ## Environment setup
-* Install .NET Core SDK
-* Install MariaDB
-* Install Docker (Optional)
+* Install .NET Core SDK [form here](https://dotnet.microsoft.com/download)
+* Install MariaDB [from here](https://mariadb.org/download/) or using docker (instructions below)
+* Install Flyway [from here](https://flywaydb.org/download/)
 
-## Database
+## Database (Docker)
 Download the mariadb docker image
 
 `docker pull mariadb`
 
-Start the db server, replace `#{your password}#` with your desired password
+Start the db server, replace `#{your db password}#` with your desired password
 
 `docker run --name open-ra-rc -e MYSQL_ROOT_PASSWORD=#{your db password}# -p 3306:3306 -d mariadb:latest`
 
@@ -18,7 +18,9 @@ Get the IP address of the server, replace `#{your docker process id}#` with the 
 
 `docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' #{your docker process id}#`
 
-Navigate to `/db` and run the schema migrations using flyway replacing value where appropriate:
+## Data & Schema Migrations
+
+Navigate to `/db` and run the schema migrations using flyway replacing values where appropriate:
 
 `flyway -url=jdbc:mariadb://#{your docker db ip}#:3306 -user=root -password=#{your db password}# -schemas=openra-rc -locations=filesystem:./migration migrat`
 
