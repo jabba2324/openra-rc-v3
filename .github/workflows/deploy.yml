@@ -28,7 +28,7 @@ jobs:
       
       if: github.event.pull_request.merged == 'true'
     - name: Docker Login
-      run: docker login --username $docker_username --password $docker_password
+      run: docker login --username $docker_user --password $docker_password
 
 
 
