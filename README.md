@@ -39,7 +39,7 @@ Create the following launchSettings.json file in the `/OpenRA.ResourceCenter.Web
 ```
 {
   "profiles": {
-    "openra_rc_v3": {
+    "OpenRA.ResourceCenter.Web": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:5001;http://localhost:5000",
