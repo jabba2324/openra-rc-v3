@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 .idea/
+
+OpenRA.ResourceCenter.Web/Properties/launchSettings.json
