@@ -64,6 +64,7 @@ namespace OpenRA.ResourceCenter.Web
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpenRA API");
+                c.DocumentTitle = "OpenRA API";
             });
             app.UseRouting();
             app.UseAuthorization();
