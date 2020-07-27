@@ -13,13 +13,10 @@ namespace OpenRA.ResourceCenter.Web.Pages
     {
         private readonly ISmtpClient _smtpClient;
         private readonly ILogger<MapsModel> _logger;
-        private EmailValidator _validator;
+        private readonly EmailValidator _validator;
 
         [BindProperty]
         public Email Email { get; set; }
-
-        public string FormMessage { get; set; }
-        public bool FormSuccess { get; set; }
 
         public ContactModel(ILogger<MapsModel> logger, ISmtpClient smtpClient)
         {
@@ -40,13 +37,13 @@ namespace OpenRA.ResourceCenter.Web.Pages
             {
                 await _smtpClient.SendEmail(Email.EmailAddress, Email.Subject, Email.Message);
                 
-                FormMessage = "Message sent comrade!";
-                FormSuccess = result.IsValid;
+                ViewData["FormMessage"] = "Message sent comrade!";
+                ViewData["FormSuccess"] = result.IsValid;
             }
             else
             {
-                FormMessage = result.Errors.First().ErrorMessage;
-                FormSuccess = result.IsValid;
+                ViewData["FormMessage"] = result.Errors.First().ErrorMessage;
+                ViewData["FormSuccess"] = result.IsValid;
             }
             
             return Page();

@@ -7,7 +7,8 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>If you need the admin/maintainer of this site, contact jabbathehutt101 at the <a href="https://discord.openra.net/">OpenRa discord server</a>. Or send a message directly via the form below.</p>
-    
+    <h3>@ViewData["FormMessage"]</h3>
+
     <form method="post"> 
         <input asp-for="Email.EmailAddress" class="rc-input" placeholder="Email"/> <br />
         <input asp-for="Email.Subject" class="rc-input" placeholder="Subject"/> <br />
