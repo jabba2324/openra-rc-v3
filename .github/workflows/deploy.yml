@@ -13,7 +13,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  deploy:
+  pipeline:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -27,11 +27,11 @@ jobs:
       run: ./build.sh $GITHUB_RUN_NUMBER
       
     - name: Docker Login
-      if: github.event.pull_request.merged == 'true'
+      if: github.event.pull_request.merged == true
       run: docker login --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Publish
-      if: github.event.pull_request.merged == 'true'
+      if: github.event.pull_request.merged == true
       run: ./publish.sh $GITHUB_RUN_NUMBER
 
 
