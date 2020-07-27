@@ -34,6 +34,8 @@ namespace OpenRA.ResourceCenter.Web
             
             services.AddAWSService<IAmazonSimpleEmailService>();
             services.AddSingleton<ISmtpClient, SmtpClient>();
+            services.AddSwaggerGen();
+            services.AddMvc(option => option.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,17 +52,27 @@ namespace OpenRA.ResourceCenter.Web
                 app.UseHsts();
             }
             
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
+            
 
+            app.UseMvcWithDefaultRoute();
+            
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
+            // specifying the Swagger JSON endpoint.
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpenRA API");
+            });
             app.UseRouting();
-
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
             });
+            
+
         }
     }
 }
