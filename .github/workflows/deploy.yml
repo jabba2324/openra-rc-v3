@@ -29,6 +29,10 @@ jobs:
       if: github.event.pull_request.merged == 'true'
     - name: Docker Login
       run: docker login --username ${{ secrets.DOCKER_USER }} --password ${{ secrets.DOCKER_PASSWORD }}
+      
+      if: github.event.pull_request.merged == 'true'
+    - name: Publish
+      run: ./publish.sh $GITHUB_RUN_NUMBER
 
 
 
