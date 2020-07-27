@@ -22,10 +22,6 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Generate Build Number
-    - name: Build Number Generator
-      uses: einaregilsson/build-number@v2
-
     # Runs a single command using the runners shell
     - name: Run a one-line script
-      run: ./build.sh $BUILD_NUMBER
+      run: ./build.sh $GITHUB_RUN_NUMBER
