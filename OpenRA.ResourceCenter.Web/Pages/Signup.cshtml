@@ -1,0 +1,23 @@
+﻿@page
+@model SigninModel
+@{
+    ViewData["Title"] = "Signup";
+}
+<section class="site-section u-centered-content">
+<h1>@ViewData["Title"]</h1>
+
+<p>Fill out the form (all fields are required), and your account will be created; you'll be sent an email with instructions on how to finish your registration. We'll only use your email to send you signup instructions and notifications related to content you upload. We hate spam as much as you do.
+
+This account will let you log into the OpenRA Resource Center, upload & manage your content, participate in discussions.
+
+Your username can only consist of alphanumeric characters and underscores and may be up to 20 characters long.</p>
+
+<form method="post"> 
+    <input class="rc-input" placeholder="username"/> <br />
+    <input class="rc-input" placeholder="email"/> <br />
+    <input class="rc-input" placeholder="password" type="password" /> <br />
+    <input class="rc-input" placeholder="confirm password" type="password" /> <br />
+    <input class="rc-input" type="submit" value="Sign Up"/>
+</form>
+
+</section>

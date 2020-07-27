@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 
-namespace OpenRA.ResourceCenter.WebrceCenter.Web
+namespace OpenRA.ResourceCenter.Web
 {
     public class Program
     {
@@ -21,6 +16,9 @@ namespace OpenRA.ResourceCenter.WebrceCenter.Web
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                }).ConfigureAppConfiguration(configurationBuilder =>
+                {
+                    configurationBuilder.AddEnvironmentVariables();
                 });
     }
 }

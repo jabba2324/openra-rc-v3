@@ -1,11 +1,18 @@
 ﻿@page
-@model MapsModel
+@model ContactModel
 @{
     ViewData["Title"] = "Contact";
 }
 <section class="site-section u-centered-content">
 <h1>@ViewData["Title"]</h1>
 
-<p>If you need the admin/maintainer of this site, contact jabbathehutt101 at the <a href="https://discord.openra.net/">OpenRa discord server</a>.</p>
-
+<p>If you need the admin/maintainer of this site, contact jabbathehutt101 at the <a href="https://discord.openra.net/">OpenRa discord server</a>. Or send a message directly via the form below.</p>
+    
+    <form method="post"> 
+        <input asp-for="Email.EmailAddress" class="rc-input" placeholder="Email"/> <br />
+        <input asp-for="Email.Subject" class="rc-input" placeholder="Subject"/> <br />
+        <textarea asp-for="Email.Message" placeholder="Message" class="rc-input"></textarea>
+        <input class="rc-input" type="submit" value="Send"/>
+    </form>
+    
 </section>
