@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace openra_rc_v3
+namespace OpenRA.ResourceCenter.WebrceCenter.Web
 {
     public class Program
     {

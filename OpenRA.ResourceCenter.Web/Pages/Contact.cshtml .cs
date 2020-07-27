@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using OpenRA.ResourceCenter.Web.Pages;
 
-namespace openra_rc_v3.Pages
+namespace OpenRA.ResourceCenter.WebrceCenter.Web.Pages
 {
     public class ContactModel : PageModel
     {

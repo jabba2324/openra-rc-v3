@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace openra_rc_v3
+namespace OpenRA.ResourceCenter.WebrceCenter.Web
 {
     public class Startup
     {

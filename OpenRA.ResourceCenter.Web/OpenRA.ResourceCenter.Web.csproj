@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
-    <RootNamespace>openra_rc_v3</RootNamespace>
+    <RootNamespace>OpenRA.ResourceCenter.Web</RootNamespace>
   </PropertyGroup>
 
 </Project>
