@@ -54,11 +54,9 @@ namespace OpenRA.ResourceCenter.Web
             
             app.UseStaticFiles();
             
-
             app.UseMvcWithDefaultRoute();
             
             app.UseSwagger();
-
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.),
             // specifying the Swagger JSON endpoint.
             app.UseSwaggerUI(c =>
@@ -66,6 +64,7 @@ namespace OpenRA.ResourceCenter.Web
                 c.SwaggerEndpoint("/swagger/v1/swagger.json", "OpenRA API");
                 c.DocumentTitle = "OpenRA API";
             });
+            
             app.UseRouting();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
