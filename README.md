@@ -1,4 +1,4 @@
-# Reademe
+# Read me
 
 ## Environment setup
 * Install .NET Core SDK [form here](https://dotnet.microsoft.com/download)
